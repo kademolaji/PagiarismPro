@@ -1,0 +1,80 @@
+<div class="row">
+  <div class="col-md-6">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title"><span class="lstick"></span>First Person</h4>
+        <div class="form-group">
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="firstStudentName"
+            placeholder="First Student Name"
+          />
+        </div>
+        <div class="form-group">
+          <input
+            type="file"
+            name="fistFile"
+            (change)="uploadFirstFile($event)"
+            class="form-control"
+          />
+        </div>
+        <div class="form-group">
+          <textarea
+            rows="10"
+            [(ngModel)]="previewFirstFile"
+            class="form-control"
+          ></textarea>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="card">
+      <div class="card-body">
+        <div class="d-flex">
+          <h4 class="card-title"><span class="lstick"></span>Second Person</h4>
+        </div>
+        <div class="form-group">
+          <input
+            type="text"
+            [(ngModel)]="secondStudentName"
+            class="form-control"
+            placeholder="Second Student Name"
+          />
+        </div>
+        <div class="form-group">
+          <input
+            type="file"
+            name="secondFile"
+            (change)="uploadSecondFile($event)"
+            class="form-control"
+          />
+        </div>
+        <div class="form-group">
+          <textarea
+            rows="10"
+            [(ngModel)]="previewSecondFile"
+            class="form-control"
+          ></textarea>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-body">
+        <div class="button-group float-right">
+          <button
+            type="button"
+            (click)="compare()"
+            class="btn btn-lg btn-primary"
+          >
+            Compare
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
