@@ -1,0 +1,17 @@
+[debug] [2019-12-23T23:58:40.556Z] ----------------------------------------------------------------------
+[debug] [2019-12-23T23:58:40.559Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\kayode.ademolaji\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js open
+[debug] [2019-12-23T23:58:40.559Z] CLI Version:   7.11.0
+[debug] [2019-12-23T23:58:40.559Z] Platform:      win32
+[debug] [2019-12-23T23:58:40.559Z] Node Version:  v10.15.3
+[debug] [2019-12-23T23:58:40.562Z] Time:          Tue Dec 24 2019 00:58:40 GMT+0100 (West Africa Standard Time)
+[debug] [2019-12-23T23:58:40.562Z] ----------------------------------------------------------------------
+[debug] [2019-12-23T23:58:40.562Z] 
+[debug] [2019-12-23T23:58:40.572Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-12-23T23:58:40.573Z] > authorizing via signed-in user
+[debug] [2019-12-23T23:58:40.574Z] [iam] checking project plagiarismpro-1efad for permissions ["firebase.projects.get"]
+[debug] [2019-12-23T23:58:40.575Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/plagiarismpro-1efad:testIamPermissions  
+
+[debug] [2019-12-23T23:58:42.288Z] <<< HTTP RESPONSE 200
+[debug] [2019-12-23T23:58:42.292Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/plagiarismpro-1efad  
+ 
+[debug] [2019-12-23T23:58:42.909Z] <<< HTTP RESPONSE 200

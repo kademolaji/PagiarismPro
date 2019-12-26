@@ -1,6 +1,7 @@
+import { UserService } from "./../../core/services/user.service";
+import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
 import { Component, OnInit } from "@angular/core";
-import { JwtService } from "../../core/services";
 
 @Component({
   selector: "app-login",
@@ -8,14 +9,25 @@ import { JwtService } from "../../core/services";
   styleUrls: ["./login.component.css"]
 })
 export class LoginComponent implements OnInit {
-  constructor(private router: Router, private jwtService: JwtService) {}
+  loginform: FormGroup;
+  constructor(
+    private router: Router,
+    private userService: UserService,
+    private fb: FormBuilder
+  ) {
+    this.loginform = this.fb.group({
+      email: ["", Validators.required],
+      password: ["", Validators.required]
+    });
+  }
 
   ngOnInit() {}
 
-  login() {
-    this.jwtService.saveToken(
-      "thfbd;jkgsdjgfhjgfffdfokdkdkfjfjhdjdkddldldldldl"
-    );
-    this.router.navigate(["/"]);
+  submitForm() {
+    this.userService.attemptAuth(this.loginform.value).subscribe(res => {
+      if (res.token) {
+        this.router.navigate(["/"]);
+      }
+    });
   }
 }

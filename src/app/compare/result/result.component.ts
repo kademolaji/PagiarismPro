@@ -1,3 +1,4 @@
+import { ActivatedRoute } from "@angular/router";
 import { Component, OnInit } from "@angular/core";
 
 @Component({
@@ -5,7 +6,15 @@ import { Component, OnInit } from "@angular/core";
   templateUrl: "./result.component.html"
 })
 export class ResultComponent implements OnInit {
-  constructor() {}
+  data: number;
+  result: string;
+  constructor(private route: ActivatedRoute) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.data = +this.route.snapshot.paramMap.get("data");
+
+    let perCent = (this.data * 100).toPrecision(2);
+
+    this.result = perCent + "%";
+  }
 }

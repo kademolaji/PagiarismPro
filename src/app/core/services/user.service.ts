@@ -38,7 +38,7 @@ export class UserService {
     }
   }
 
-  setAuth(user: User) {
+  setAuth(user: any) {
     // Save JWT sent from server in localstorage
     this.jwtService.saveToken(user.token);
     // Set current user data into observable
@@ -56,11 +56,10 @@ export class UserService {
     this.isAuthenticatedSubject.next(false);
   }
 
-  attemptAuth(type, credentials): Observable<User> {
-    const route = type === "login" ? "/login" : "";
-    return this.apiService.post("/users" + route, { user: credentials }).pipe(
+  attemptAuth(credentials): Observable<any> {
+    return this.apiService.post("/login", { credentials }).pipe(
       map(data => {
-        this.setAuth(data.user);
+        this.setAuth(data);
         return data;
       })
     );
