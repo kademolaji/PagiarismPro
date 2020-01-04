@@ -2,6 +2,9 @@
 
 This project is designed to compare student test file.
 
+## Sample Link
+Sample can be viewed via [PlagiarismPro](https://plagiarismpro-1efad.firebaseapp.com/).
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
